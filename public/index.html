@@ -39,8 +39,17 @@
                 Chat:
                 <input id="chat-text-box" type="text">
             </label>
+            <!-- <input value="{{xsrf-token}}"> -->
+            <input id="xsrf-token" value="" hidden>
             <button id="chat-button" onclick="sendChat()">Send</button>
         </div>
+        <form action="/upload-image" id="image-form" method="post" enctype="multipart/form-data">
+            <br/>
+            <label for="form-file">Post Image: </label>
+            <input id="form-file" type="file" name="upload">
+            <input type="submit" value="Post">
+            <br/>
+        </form>
 
     </div>
 
@@ -69,7 +78,7 @@
             <label>Password:&nbsp;
                 <input id="reg-form-pass" type="password" name="password_reg">
             </label>
-            <input type="submit" value="Post">
+            <input type="submit" value="Submit">
         </form>
 
         Login:
@@ -81,7 +90,7 @@
             <label>Password:&nbsp;
                 <input id="login-form-pass" type="password" name="password_login">
             </label>
-            <input type="submit" value="Post">
+            <input type="submit" value="Submit">
         </form>
 
 
@@ -92,6 +101,12 @@
             <br/>
             <input type="submit" value="Post">
         </form>
+
+        <div id="user-list-container">
+            <h3>Online Users</h3>
+            <ul id="user-list">
+            </ul>
+        </div>
 
 
     </div>
